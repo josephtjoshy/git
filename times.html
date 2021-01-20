@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TIME</title>
+	<link rel="stylesheet" type="text/css"
+		href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		nav {
+			width: 100%;
+			height: 80px;
+			display: flex;
+			justify-content: left;
+			font-size: 20px;
+			border-bottom: 1px solid #e5e5e5;
+		}
+
+		nav .logo {
+			width: 30%;
+			text-align: center;
+			margin-top: 20px;
+
+		}
+
+		nav .logo h1 {
+			color: red;
+		}
+
+		nav .menu {
+			width: 60%;
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		nav .menu ul li {
+			list-style: none;
+			float: left;
+			padding: 10px;
+			margin: 0 20px;
+		}
+
+		nav .menu ul:nth-child(2) li {
+			position: relative;
+			top: -8px;
+			left: 140px;
+			color: #757575;
+		}
+
+		nav .menu ul li a {
+			text-decoration: none;
+			color: #747575;
+		}
+
+		nav .menu ul li a:hover {
+			color: black;
+		}
+
+		nav form {
+			position: absolute;
+			width: 60%;
+			left: 25%;
+			top: 65px;
+		}
+
+		nav form input {
+			width: 90%;
+			position: relative;
+			top: -45px;
+			padding: 10px 0px;
+			border: none;
+			outline: none;
+			transform: scaleX(0);
+			transform-origin: right;
+			transition: .5s;
+			border-bottom: 1px solid #e5e5e5;
+
+		}
+
+		nav form input::placeholder {
+			font-size: 20px;
+
+		}
+
+		nav form input.expand {
+			transform: scaleX(1);
+			padding: 10px;
+		}
+
+		nav form input.expand~.fa-search {
+			visibility: hidden;
+		}
+
+		nav form input.expand~.fa-times {
+			display: block;
+		}
+
+		nav form .fa {
+			position: absolute;
+			margin-top: 8px;
+			top: -40px;
+			right: 40px;
+			cursor: pointer;
+			color: #757575;
+		}
+
+		.fa-times {
+			display: none;
+		}
+
+		.lstory {
+			margin: 10%;
+			background-color: whitesmoke;
+			padding: 50px;
+		}
+
+		.flexbox {
+			display: flex;
+		}
+
+		.box {
+			margin: 2%;
+			text-align: center;
+			justify-content: center;
+		}
+	</style>
+	<script>
+		function call(data) {
+
+			let jsonobj = [
+				{
+					title: "Saudi King Salman Hospitalized for Medical Tests",
+					link: "https://time.com/5868873/saudi-kind-salman-hospitalized/"
+				},
+				{
+					title: "Iran Executes Man Convicted of Spying on Soleimani",
+					link: "https://time.com/5868856/iran-executed-spy-soleimani/"
+				},
+				{
+					title: "Kim Jong Un Berates Officials Over Hospital Project",
+					link: "https://time.com/5868844/kim-jong-un-berate-hospital-officials/"
+				},
+				{
+					title: "Boy, 12, Driving Stolen Truck Leads Police on Chase",
+					link: "https://time.com/5868839/delaware-boy-stolen-truck-police/"
+				},
+				{
+					title: "N.J. Federal Judge’s Son Killed, Husband Wounded",
+					link: "https://time.com/5868834/new-jersey-federal-judge-shooting/"
+				}
+			]
+
+
+
+			if (data == 'one') {
+				location.href =jsonobj[0].link;
+			}
+			if (data == 'two') {
+				location.href = jsonobj[1].link;
+			}
+			if (data == 'three') {
+				location.href = jsonobj[2].link;
+			}
+			if (data == 'four') {
+				location.href = jsonobj[3].link;
+			}
+			if (data == 'five') {
+				location.href = jsonobj[4].link;
+			}
+
+
+		}
+	</script>
+</head>
+
+<body>
+	<nav>
+		<div class="logo">
+			<h1>TIME</h1>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><a href="#"><b>America must Change</b></a></li>
+				<li><a href="#">Racism and Covid-19</a></li>
+				<li><a href="#">Inequality</a></li>
+				<li><a href="#">Newsletter</a></li>
+			</ul>
+		</div>
+		<form action="">
+			<input type="text" id="search" placeholder="Search here...">
+			<i class="fa fa-search"></i>
+			<i class="fa fa-times"></i>
+		</form>
+	</nav>
+	<section class="stories">
+		<div class="lstory">
+			<center>
+				<h2>LATEST STORIES</h2>
+			</center><br>
+			<div class="flexbox">
+				<div class="box" id="one" onclick="call('one');">
+					<h2><u>1</u></h2>
+					<br><span>Saudi King Salman Hospitalized for Medical Tests</span>
+				</div>
+				<div class="box" id="two" onclick="call('two');">
+					<h2><u>2</u></h2>
+					<br><span>Iran Executes man convicted on spying on Soleimani</span>
+				</div>
+				<div class="box" id="three" onclick="call('three');">
+					<h2><u>3</u></h2>
+					<br><span>Kim Jong Un Berates Officials over Hospital Projects</span>
+				</div>
+				<div class="box" id="four" onclick="call('four');">
+					<h2><u>4</u></h2>
+					<br><span>Boy 12, Driving Stolen truck leads Police on Chase</span>
+				</div>
+				<div class="box" id="five" onclick="call('five');">
+					<h2><u>5</u></h2>
+					<br><span>NJ Federal Judge's son Killed, Husband Wounded</span></>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div>
+			<center>
+				<h1>Inside the Issue</h1>
+			</center>
+		</div>
+	</section>
+</body>
+
+</html>
+<script type="text/javascript">
+	var searchIcon = document.querySelector('.fa-search');
+	var closeIcon = document.querySelector('.fa-times');
+	var search = document.getElementById('search');
+	searchIcon.onclick = () => {
+		search.classList.add('expand');
+	}
+	closeIcon.onclick = () => {
+		search.classList.remove('expand');
+	}
+	var button = document.querySelector('button');
+	var menu = document.querySelector('.menu');
+	button.onclick = () => {
+		menu.classList.toggle('expand-mobile');
+		button.classList.toggle('expand-icon');
+
+	}
+</script>
